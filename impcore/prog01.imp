@@ -2,14 +2,51 @@
 ;; Time spent on assignment: 3h
 ;; Collaborators: N/A
 
+;; Helper function 
+
 ;; Exercise 3
-;; DEFINE sigma HERE
+(define sigma (m n)
+    (if (= m n)
+        m
+    ;; else
+        (+ 
+            m 
+            (sigma (+ m 1) n)
+        )
+    )
+)
 
 ;; Exercise 4a
-;; DEFINE exp HERE
+(define exp (m n)
+    (if (= n 0)
+        1
+        (*
+            m
+            (exp m (- n 1))
+        )
+    )
+)
 
-;; Exercise 4a
-;; DEFINE log HERE
+;; Exercise 4b
+(define log (m n)
+    (log_helper m n 1)
+)
+
+;; Helper for recursive log
+(define log_helper (m n l)
+    (if 
+        ;; conditional
+        (> 
+            (exp m l)
+            n
+        )
+        ;; then
+        l
+        ;; else
+        (log_helper m n)
+    )
+    
+)
 
 ;; Exercise 5
 ;; DEFINE choose HERE
