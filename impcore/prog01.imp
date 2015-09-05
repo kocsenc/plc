@@ -41,9 +41,9 @@
             n
         )
         ;; then
-        l
+        (- l 1)
         ;; else
-        (log_helper m n)
+        (log_helper m n (+ l 1))
     )
     
 )
