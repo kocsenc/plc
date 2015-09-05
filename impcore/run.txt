@@ -5,4 +5,5 @@
 (use test-Exercise5-choose.imp)
 (use test-Exercise6-fib.imp)
 (use test-Exercise7a-prime?.imp)
-
+(use test-Exercise7b-nthprime.imp)
+(use test-Exercise7c-sumprimes.imp) 

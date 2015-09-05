@@ -6,7 +6,7 @@
 (define sigma (m n)
     (if (= m n)
         m
-    ;; else
+        ;; else
         (+ 
             m 
             (sigma (+ m 1) n)
@@ -136,19 +136,45 @@
 
 ;; Exercise 7b
 (define nthprime (n)
-    (if 1
-        1
+    (if (= n 1)
+        2
     ;; else 
-        0
+        (nthprime_helper n 3 1)
+    )
+)
+
+;; nthprime helper function
+;; Will go through every odd number to find the prime
+;; always assumes n > 2
+(define nthprime_helper (n curr found) 
+    (if (= found n)
+        (- curr 2)
+        (if (prime? curr)
+            ;; 
+            (nthprime_helper n (+ curr 2) (+ found 1))
+            (nthprime_helper n (+ curr 2) found)
+        )
     )
 )
 
 ;; Exercise 7c
 (define sumprimes (n)
-    (if 1
-        1
-    ;; else
+    (if (= n 0)
         0
+        ;; else
+        (sumprimes_helper n (nthprime n))
+    )
+)
+
+;; Sumprimes helper.
+;; Will count down from n to 1 and return rolling sum of primes
+(define sumprimes_helper (n curr)
+    (if (< n 2)
+        curr
+        (sumprimes_helper 
+            (- n 1)
+            (+ curr (nthprime (- n 1)) )
+        )
     )
 )
 
