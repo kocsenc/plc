@@ -49,20 +49,29 @@
 ;; Exercise 5
 (define choose (n k)
     ;; add additional check for n < 0 or k < 0
-
-    (if (= k 0)
-        1
-        (if (= n k)
+    (if (and (< n 0) (< k 0) )
+        -1
+        (if (= k 0)
             1
-            (/
-                ( factorial n )
-                (*
-                    ( factorial k )
-                    ( factorial (- n k) )
+            (if (= n k)
+                1
+                (+
+                    (choose (- n 1) k )
+                    (choose (- n 1) (- k 1))
                 )
             )
         )
+    )
+)
 
+;; And operator helper function
+(define and (a b)
+    (if a
+        (if b
+            1
+            0
+        )
+        0
     )
 )
 
