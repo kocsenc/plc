@@ -2,8 +2,6 @@
 ;; Time spent on assignment: 3h
 ;; Collaborators: N/A
 
-;; Helper function 
-
 ;; Exercise 3
 (define sigma (m n)
     (if (= m n)
@@ -49,7 +47,36 @@
 )
 
 ;; Exercise 5
-;; DEFINE choose HERE
+(define choose (n k)
+    ;; add additional check for n < 0 or k < 0
+
+    (if (= k 0)
+        1
+        (if (= n k)
+            1
+            (/
+                ( factorial n )
+                (*
+                    ( factorial k )
+                    ( factorial (- n k) )
+                )
+            )
+        )
+
+    )
+)
+
+;; factorial helper function
+(define factorial ( n ) 
+    (if (= n 0)
+        0
+        (if (= n 1)
+            1
+            (* n (factorial (- n 1) ))
+        )
+    )
+)
+
 
 ;; Exercise 6
 ;; DEFINE fib HERE

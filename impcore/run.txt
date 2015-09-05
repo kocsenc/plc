@@ -2,3 +2,4 @@
 (use test-Exercise3-sigma.imp)
 (use test-Exercise4a-exp.imp)  
 (use test-Exercise4b-log.imp)
+(use test-Exercise5-choose.imp)
