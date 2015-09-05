@@ -3,3 +3,6 @@
 (use test-Exercise4a-exp.imp)  
 (use test-Exercise4b-log.imp)
 (use test-Exercise5-choose.imp)
+(use test-Exercise6-fib.imp)
+(use test-Exercise7a-prime?.imp)
+

@@ -88,19 +88,78 @@
 
 
 ;; Exercise 6
-;; DEFINE fib HERE
+(define fib (m)
+    (if (= m 0)
+        0
+        (if (= m 1)
+            1
+            (+
+                ( fib (- m 1) )
+                ( fib (- m 2) )
+            )
+        )
+    )
+)
 
 ;; Exercise 7a
-;; DEFINE prime? HERE
+(define prime? (n)
+    ;; Assuming 1 is NOT prime
+    (if (< n 2)
+        0 ;; false
+        (prime_helper n (- n 1))
+    )
+)
+
+;; Prime Helper returns true if prime, false otherwise
+(define prime_helper (n m)
+    (if (= m 1)
+        1
+        (if (> (mod n m) 0) ;; if n%m > 0
+            (prime_helper n (- m 1))
+            0
+        )
+    )
+)
+    
+;; Mod helper function
+;; Only works when b < a
+(define mod (a b)
+    (if (< a b)
+        -1
+        ;; return a - ((a/b) * b)
+        (-
+            a
+            (* (/ a b) b)
+        )
+    )
+)
 
 ;; Exercise 7b
-;; DEFINE nthprime HERE
+(define nthprime (n)
+    (if 1
+        1
+    ;; else 
+        0
+    )
+)
 
 ;; Exercise 7c
-;; DEFINE sumprimes HERE
+(define sumprimes (n)
+    (if 1
+        1
+    ;; else
+        0
+    )
+)
 
 ;; Exercise 7d
-;; DEFINE relprime? HERE
+(define relprime? (m n)
+    (if 1
+        1
+    ;; else
+        0
+    )
+)
 
 ;; Exercise 8
 ;; DEFINE binary HERE
