@@ -204,16 +204,23 @@
 
 ;; Assume b is > a, always
 (define relprime_helper (a b carriage)
-    (if (= carriage 1)
-        1
-        (if (= (mod b a) 0 ) ;; if b%a == 0 or a == 2
+    (if (= a 2)
+        (if (and (prime? a) (prime? b))
+            1
             0
-            (if (= (+ (mod b carriage) (mod a carriage)) 0 ) ;; If the sum of the mods = 0 (found common denominator)
+        )
+        (if (= carriage 1)
+            1
+            (if (= (mod b a) 0 ) ;; if b%a == 0 or a == 2
                 0
-                (relprime_helper a b (- carriage  1))
-            )
-        )   
+                (if (= (+ (mod b carriage) (mod a carriage)) 0 ) ;; If the sum of the mods = 0 (found common denominator)
+                    0
+                    (relprime_helper a b (- carriage  1))
+                )
+            )   
+        )
     )
+    
 )
 
 ;; Exercise 8
