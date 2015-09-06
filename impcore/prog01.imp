@@ -137,8 +137,11 @@
 ;; Example (mod 10 6) => 4
 (define mod (a b)
     (if (< a b)
-        -1
-        ;; return a - ((a/b) * b)
+        (-
+            b
+            (* (/ b a) a)
+        )
+        ;; return a - ((a/b) * b) when a > b
         (-
             a
             (* (/ a b) b)
@@ -225,5 +228,14 @@
 
 ;; Exercise 8
 (define binary (m)
-    1
+    (if (= m 0)
+        0
+        (if (= m 1)
+            1
+            (+
+                (mod m 2)
+                (* 10 (binary (/ m 2) ) )
+            )
+        )
+    )
 )
