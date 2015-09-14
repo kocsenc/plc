@@ -1,3 +1,4 @@
+(use prog01.imp)
 ;; test-Exercise3-sigma.imp
 (check-expect (sigma   0  0) 0)
 (check-expect (sigma   0  5) 15)

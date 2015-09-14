@@ -1,5 +1,4 @@
 (use prog01.imp)
-(use test-Exercise8-binary.imp)
 (use test-Exercise3-sigma.imp)
 (use test-Exercise4a-exp.imp)  
 (use test-Exercise5-choose.imp)
@@ -8,3 +7,4 @@
 (use test-Exercise7b-nthprime.imp)
 (use test-Exercise7c-sumprimes.imp) 
 (use test-Exercise7d-relprime?.imp)
+(use test-Exercise8-binary.imp)
