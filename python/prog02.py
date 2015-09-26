@@ -62,7 +62,7 @@ def prime(n):
     else:
         try:
             return prime_helper(n, n-1)
-        except:
+        except RuntimeError:
             print("\t\tYour OS recursion depth is %d and was exceeded." % sys.getrecursionlimit())
             return 1
 
