@@ -6,12 +6,12 @@ from prog02 import *
 
 print_success = True
 
-    
+
 def test_sigma(x, y, expected):
     """
     Tests the sigma function
     """
-    
+
     res = sigma(x, y)
     if res == expected:
         if print_success:
@@ -20,12 +20,12 @@ def test_sigma(x, y, expected):
     else:
         print("Test sigma %d %d failed. Expected %d but got %d" % (x, y, expected, res))
         return 0
-        
+
 def test_exp(x, y, expected):
     """
     Tests the exp function
     """
-    
+
     res = exp(x, y)
     if res == expected:
         if print_success:
@@ -34,12 +34,12 @@ def test_exp(x, y, expected):
     else:
         print("Test exp %d %d failed. Expected %d but got %d" % (x, y, expected, res))
         return 0
-            
+
 def test_log(x, y, expected):
     """
     Tests the log function
     """
-    
+
     res = log(x, y)
     if res == expected:
         if print_success:
@@ -48,12 +48,12 @@ def test_log(x, y, expected):
     else:
         print("Test log %d %d failed. Expected %d but got %d" % (x, y, expected, res))
         return 0
-            
+
 def test_choose(x, y, expected):
     """
     Tests the choose function
     """
-    
+
     res = choose(x, y)
     if res == expected:
         if print_success:
@@ -62,12 +62,12 @@ def test_choose(x, y, expected):
     else:
         print("Test choose %d %d failed. Expected %d but got %d" % (x, y, expected, res))
         return 0
-            
+
 def test_fib(x, expected):
     """
     Tests the fib function
     """
-    
+
     res = fib(x)
     if res == expected:
         if print_success:
@@ -76,12 +76,12 @@ def test_fib(x, expected):
     else:
         print("Test fib %d failed. Expected %d but got %d" % (x, expected, res))
         return 0
-            
+
 def test_prime(x, expected):
     """
     Tests the prime function
     """
-    
+
     res = prime(x)
     if res == expected:
         if print_success:
@@ -90,12 +90,12 @@ def test_prime(x, expected):
     else:
         print("Test prime %d failed. Expected %d but got %d" % (x, expected, res))
         return 0
-            
+
 def test_nthprime(x, expected):
     """
     Tests the nthprime function
     """
-    
+
     res = nthprime(x)
     if res == expected:
         if print_success:
@@ -104,12 +104,12 @@ def test_nthprime(x, expected):
     else:
         print("Test nthprime %d failed. Expected %d but got %d" % (x, expected, res))
         return 0
-            
+
 def test_sumprimes(x, expected):
     """
     Tests the sumprimes function
     """
-    
+
     res = sumprimes(x)
     if res == expected:
         if print_success:
@@ -118,12 +118,12 @@ def test_sumprimes(x, expected):
     else:
         print("Test sumprimes %d failed. Expected %d but got %d" % (x, expected, res))
         return 0
-            
+
 def test_relprime(x, y, expected):
     """
     Tests the relprime function
     """
-    
+
     res = relprime(x, y)
     if res == expected:
         if print_success:
@@ -132,12 +132,12 @@ def test_relprime(x, y, expected):
     else:
         print("Test relprimes %d %d failed. Expected %d but got %d" % (x, y, expected, res))
         return 0
-            
+
 def test_binary(x, expected):
     """
     Tests the binary function
     """
-    
+
     res = binary(x)
     if res == expected:
         if print_success:
@@ -146,12 +146,12 @@ def test_binary(x, expected):
     else:
         print("Test binary %d failed. Expected %d but got %d" % (x, expected, res))
         return 0
-            
+
 def main():
     try:
         number_tests = 111
         number_passed = 0
-        
+
         '''
         Tests for sigma
         '''
@@ -235,10 +235,10 @@ def main():
         number_passed += test_prime(5, 1)
         number_passed += test_prime(6, 0)
         number_passed += test_prime(1008, 0)
-        #number_passed += test_prime(1009, 1)
-        #number_passed += test_prime(1010, 0)
-        #number_passed += test_prime(1012, 0)
-        #number_passed += test_prime(1013, 1)
+        number_passed += test_prime(1009, 1)
+        number_passed += test_prime(1010, 0)
+        number_passed += test_prime(1012, 0)
+        number_passed += test_prime(1013, 1)
         number_passed += test_prime(14, 0)
         number_passed += test_prime(15, 0)
 
@@ -309,6 +309,6 @@ def main():
     except RuntimeError:
         print("Woops, runtime error (stack overflow)! passed %d/%d" % (number_passed, number_tests))
 
-    
-    
+
+
 main()

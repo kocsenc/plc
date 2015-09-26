@@ -60,7 +60,11 @@ def prime(n):
     if n < 2:
         return False
     else:
-        return prime_helper(n, n-1)
+        try:
+            return prime_helper(n, n-1)
+        except:
+            print("\t\tYour OS recursion depth is %d and was exceeded." % sys.getrecursionlimit())
+            return 1
 
 # Exercise 7b
 def nthprime_helper(n, curr, found):
@@ -122,6 +126,17 @@ def binary(m):
         return 0
     elif m == 1:
         return 1
+    elif m == -1:
+        return -1
     else:
-        return (m%2) + (10 * binary(m/2))
+        try:
+            if m < 0:
+                ans = -(m%2) + (10 * binary(m/2))
+            else:
+                ans = (m%2) + (10 * binary(m/2))
+            return ans
+        except RuntimeError:
+            print("\t\tYour OS recursion depth is %d and was exceeded." % sys.getrecursionlimit())
+            return 0
+
 
