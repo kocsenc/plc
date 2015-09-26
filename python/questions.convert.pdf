@@ -3,16 +3,23 @@
 Python was easier; mostly because it has been my goto language for many things. I've done web services, scripts, low
 level, and even entire GUI apps with Python. So naturally being able to write code down for Python was easier.
 
+Additionally, a lot of the logic was already done with improce, and transposing 
+it to python was essentially reading the semantics of impcore, which are quite straight forward.
+
 It is important to note that the mentality when programming these problems are way different; Python and
 Impcore are just different ways to put it in code and its worthy to mention that Impcores is nothing but a
 syntax hurdle to write the program down. 
 
+
 2. Did not having the built-in libraries make it harder?
 
-Yes it did make it harder; which is why the playing field was a little bit more level between Python and Impcore.
-This made it so that the way to approach the problems was the same. 
+Not really, because the approach was assuming no libraries from IMPCORE since the 
+beggining, so it made no difference.
 
 
 3. Which gave a more accurate answer? Why?
+
+Impcore suprisingly gave a more accurate answer, and that had to do mostly because of the recurison
+limit that could be more easily exceeded by python (even after setting it to the max on my OS).
 
 
