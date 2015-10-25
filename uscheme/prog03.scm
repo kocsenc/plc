@@ -2,12 +2,6 @@
 ;; Time spent on assignment: 5 hours
 ;; Collaborators: N/A
 
-
-;; Helper function take
-;; Takes the first n number of elements froma list 
-
-
-
 ;; DEFINE findInList here
 (define findInList ( lst x )
     ;; if len lst == 0; return false
