@@ -1,0 +1,70 @@
+/* Name: Kocsen Chung */
+/* PLC programming assignment 7 */
+/* Learning uProlog */
+
+[fact].
+member(X, [X|M]).
+member(X, [Y|M]) :- member(X, M).
+
+/* flights */
+flight(rochester, nyc).
+flight(rochester, dc).
+flight(rochester, detroit).
+flight(nyc, dc).
+flight(nyc, paris).
+flight(nyc, miami).
+flight(dc, miami).
+flight(dc, nyc).
+flight(dc, denver).
+flight(detroit, rochester).
+flight(detroit, dc).
+flight(denver, detroit).
+flight(denver, miami).
+flight(denver, dc).
+flight(miami, london).
+flight(london, nyc).
+flight(london, berlin).
+flight(london, paris).
+flight(berlin, miami).
+
+/* Types of flights */
+direct(A, B) :- flight(A, B).
+oneStop(A, B, C) :- direct(A, B), direct(B, C).
+twoStop(A, B, C, D) :- oneStop(A, B, C), direct(C, D).
+threeStop(A, B, C, D, E) :- twoStop(A, B, C, D), direct(D, E).
+fourStop(A, B, C, D, E, F) :- threeStop(A, B, C, D, E), direct(E, F).
+
+/* Flight can exist in any combination */
+flightExists(A, B) :- direct(A, B).
+flightExists(A, B) :- oneStop(A, Z, B).
+flightExists(A, B) :- twoStop(A, Z, Y, B).
+flightExists(A, B) :- threeStop(A, Z, Y, X, B).
+flightExists(A, B) :- fourStop(A, Z, Y, X, W, B).
+
+[query].
+/* 1. flight path from Rochester to Paris? */
+flightExists(rochester, paris).
+
+/* 2. flight path from Paris to Rochester? */
+flightExists(paris, rochester).
+
+/* 3. direct flight from Berlin to Miami? */
+direct(berlin, miami).
+
+/* 4. one stop flight from London to Rochester? */
+oneStop(london, rochester).
+
+/* 5. two stop flight from London to Rochester? */
+twoStop(london, rochester).
+
+/* 6. three stop flight from London to Rochester? */
+threeStop(london, rochester).
+
+/* 7. four stop flight from London to Rochester? */
+fourStop(london, rochester).
+
+/* 8. Does your flightExists query give you the longest or shortest possible path? */
+/*     It gives the shortest path because the first flightExists clause is checking for direct flights */
+
+/* Can you explain how to make it do it the opposite way, if it is even possible? */
+/*     Order closes in reverse order, since as soon as a body is satisfied it will return */
